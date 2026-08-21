@@ -1,0 +1,473 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Loja Oficial APK - TV Nova Juarez</title>
+    <style>
+        /* ===== RESET & BASE ===== */
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+            font-family: 'Segoe UI', Roboto, Arial, sans-serif;
+        }
+
+        body {
+            min-height: 100vh;
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            padding: 30px 20px;
+            /* Fundo animado com gradiente dinâmico */
+            background: linear-gradient(-45deg, #0b0e1a, #1a1e3a, #2a1f3d, #0f1b2e);
+            background-size: 400% 400%;
+            animation: gradientBG 18s ease infinite;
+        }
+
+        @keyframes gradientBG {
+            0% { background-position: 0% 50%; }
+            50% { background-position: 100% 50%; }
+            100% { background-position: 0% 50%; }
+        }
+
+        /* ===== CONTAINER PRINCIPAL ===== */
+        .container {
+            max-width: 1100px;
+            width: 100%;
+            background: rgba(255, 255, 255, 0.07);
+            backdrop-filter: blur(14px);
+            -webkit-backdrop-filter: blur(14px);
+            border-radius: 40px;
+            padding: 30px 30px 40px;
+            box-shadow: 0 25px 60px rgba(0, 0, 0, 0.7), 0 0 0 1px rgba(255, 255, 255, 0.04);
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            transition: all 0.2s;
+        }
+
+        /* ===== CABEÇALHO ===== */
+        .cabecalho {
+            display: flex;
+            align-items: center;
+            gap: 20px;
+            padding: 18px 25px;
+            background: rgba(255, 255, 255, 0.05);
+            backdrop-filter: blur(6px);
+            -webkit-backdrop-filter: blur(6px);
+            border-radius: 30px;
+            margin-bottom: 35px;
+            border: 1px solid rgba(255, 255, 255, 0.06);
+            box-shadow: 0 8px 20px rgba(0, 0, 0, 0.3);
+        }
+
+        .logo {
+            width: 85px;
+            height: 85px;
+            border-radius: 18px;
+            object-fit: cover;
+            box-shadow: 0 8px 18px rgba(0, 0, 0, 0.5);
+            border: 2px solid rgba(255, 255, 255, 0.15);
+            transition: transform 0.3s ease;
+        }
+        .logo:hover {
+            transform: scale(1.03);
+        }
+
+        .titulo-principal {
+            color: #ffffff;
+            font-size: 28px;
+            font-weight: 700;
+            letter-spacing: -0.3px;
+            text-shadow: 0 2px 20px rgba(0, 0, 0, 0.4);
+            background: linear-gradient(135deg, #f0f4ff, #b8c6ff);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        .subtitulo {
+            color: rgba(255, 255, 255, 0.5);
+            font-size: 14px;
+            font-weight: 400;
+            letter-spacing: 0.3px;
+            margin-top: 4px;
+        }
+
+        /* ===== LISTA DE APPS ===== */
+        .lista-aplicativos {
+            display: flex;
+            flex-direction: column;
+            gap: 14px;
+        }
+
+        .aplicativo {
+            background: rgba(255, 255, 255, 0.06);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 18px 24px;
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.07);
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .aplicativo:hover {
+            background: rgba(255, 255, 255, 0.10);
+            border-color: rgba(255, 255, 255, 0.15);
+            transform: translateY(-3px) scale(1.005);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4);
+        }
+
+        .info-app {
+            display: flex;
+            flex-direction: column;
+            gap: 4px;
+            flex: 1 1 200px;
+        }
+
+        .nome-app {
+            font-size: 19px;
+            font-weight: 700;
+            color: #eef3ff;
+            letter-spacing: -0.2px;
+            text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+        }
+
+        .compatibilidade {
+            color: rgba(255, 255, 255, 0.6);
+            font-size: 13px;
+            font-weight: 400;
+            display: flex;
+            align-items: center;
+            gap: 6px;
+        }
+
+        .botoes {
+            display: flex;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-top: 6px;
+        }
+
+        .botao {
+            padding: 10px 22px;
+            border: none;
+            border-radius: 60px;
+            font-size: 14px;
+            font-weight: 600;
+            text-decoration: none;
+            display: inline-flex;
+            align-items: center;
+            gap: 8px;
+            cursor: pointer;
+            transition: all 0.2s ease;
+            letter-spacing: 0.3px;
+            backdrop-filter: blur(4px);
+            background: rgba(255, 255, 255, 0.08);
+            color: #fff;
+            border: 1px solid rgba(255, 255, 255, 0.1);
+            box-shadow: 0 4px 12px rgba(0, 0, 0, 0.2);
+        }
+
+        .botao-baixar {
+            background: linear-gradient(145deg, #2b8c3e, #1f6e2f);
+            border-color: rgba(100, 220, 120, 0.3);
+            color: white;
+            box-shadow: 0 4px 15px rgba(40, 167, 69, 0.3);
+        }
+        .botao-baixar:hover {
+            background: linear-gradient(145deg, #35a04a, #258035);
+            transform: scale(1.04);
+            box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
+        }
+
+        .botao-compartilhar {
+            background: rgba(255, 215, 0, 0.15);
+            border-color: rgba(255, 215, 0, 0.25);
+            color: #ffe484;
+        }
+        .botao-compartilhar:hover {
+            background: rgba(255, 215, 0, 0.25);
+            transform: scale(1.04);
+            box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
+        }
+
+        /* ===== RODAPÉ INFORMATIVO ===== */
+        .rodape-info {
+            margin-top: 35px;
+            text-align: center;
+            color: rgba(255, 255, 255, 0.2);
+            font-size: 13px;
+            letter-spacing: 0.5px;
+            border-top: 1px solid rgba(255, 255, 255, 0.04);
+            padding-top: 25px;
+        }
+
+        /* ===== RESPONSIVO ===== */
+        @media (max-width: 700px) {
+            .container {
+                padding: 20px 16px 30px;
+                border-radius: 28px;
+            }
+            .cabecalho {
+                flex-direction: column;
+                text-align: center;
+                padding: 18px 16px;
+            }
+            .titulo-principal {
+                font-size: 22px;
+            }
+            .aplicativo {
+                flex-direction: column;
+                align-items: stretch;
+                gap: 12px;
+                padding: 18px 18px;
+            }
+            .info-app {
+                flex: unset;
+            }
+            .botoes {
+                justify-content: flex-start;
+            }
+            .botao {
+                padding: 8px 16px;
+                font-size: 13px;
+            }
+        }
+
+        @media (max-width: 480px) {
+            .logo {
+                width: 65px;
+                height: 65px;
+            }
+            .titulo-principal {
+                font-size: 19px;
+            }
+            .nome-app {
+                font-size: 17px;
+            }
+        }
+    </style>
+</head>
+<body>
+
+    <div class="container">
+
+        <!-- Cabeçalho -->
+        <header class="cabecalho">
+            <img src="https://i.postimg.cc/y3C1Nkv1/lv-0-20260616101447.png" alt="Logo TV Nova Juarez" class="logo">
+            <div>
+                <h1 class="titulo-principal">Loja Oficial APK</h1>
+                <div class="subtitulo">TV Nova Juarez · Apps IPTV</div>
+            </div>
+        </header>
+
+        <!-- Lista de Aplicativos -->
+        <div class="lista-aplicativos">
+
+            <!-- App 1 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">FiziPlayer</span>
+                    <span class="compatibilidade">📱 Celulares e Tablets Android</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.gaha.fiziplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.gaha.fiziplayer');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 2 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">OttPlay</span>
+                    <span class="compatibilidade">📱 Android TV, Celulares e Tablets</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.ottplay.ottplay" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.ottplay.ottplay');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 3 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Ninex Player</span>
+                    <span class="compatibilidade">📱 Android 5.0+</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.sidhbalitech.ninexplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.sidhbalitech.ninexplayer');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 4 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">ImPlayer M</span>
+                    <span class="compatibilidade">📱 Android TV e Celulares</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.myiptvonline.implayerm" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.myiptvonline.implayerm');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 5 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Wavvy TV Plus</span>
+                    <span class="compatibilidade">📱 Smart TV e Android Móvel</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.wavvy.tvplus" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.wavvy.tvplus');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 6 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Smart IPTV</span>
+                    <span class="compatibilidade">📱 TV Box e Android TV</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.studio23apps.smartiptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.studio23apps.smartiptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 7 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Zen IPTV</span>
+                    <span class="compatibilidade">📱 Celular, Tablet e TV</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=app.zeniptv.mobile" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=app.zeniptv.mobile');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 8 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">IPTV Pro Streamer</span>
+                    <span class="compatibilidade">📱 Android 6.0+</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.iptvprostreamplayer.v1" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.iptvprostreamplayer.v1');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 9 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">AE IPTV Player</span>
+                    <span class="compatibilidade">📱 Todos os Android</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.aeapp.iptvplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.aeapp.iptvplayer');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 10 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">IPTV Plus</span>
+                    <span class="compatibilidade">📱 TV e Celular</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.iptvstreamsolutions.iptvplus" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.iptvstreamsolutions.iptvplus');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 11 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Big Play TV</span>
+                    <span class="compatibilidade">📱 Android TV e Box</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.bigplay.tv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.bigplay.tv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 12 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">IPTV Smarter Pro</span>
+                    <span class="compatibilidade">📱 Android TV, Celular, Tablet</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=ai.firstorder.iptv.player.smarter.androidtv.pro" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=ai.firstorder.iptv.player.smarter.androidtv.pro');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 13 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">DiixStream IPTV Player</span>
+                    <span class="compatibilidade">📱 Universal Android</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.diixtream.iptvplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.diixtream.iptvplayer');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 14 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Pars IPTV Player</span>
+                    <span class="compatibilidade">📱 Android 5.0+</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.aglontech.parsiptvplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.aglontech.parsiptvplayer');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 15 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Streambox Sudan</span>
+                    <span class="compatibilidade">📱 Celular e TV</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=sudan.streambox" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=sudan.streambox');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- App 16 -->
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">M3U IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel</span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=de.herber_edevelopment.m3uiptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=de.herber_edevelopment.m3uiptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+        </div>
+
+        <div class="rodape-info">
+            TV Nova Juarez · 16 aplicativos IPTV disponíveis
+        </div>
+
+    </div>
+
+</body>
+</html>
