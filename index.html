@@ -19,7 +19,6 @@
             justify-content: center;
             align-items: center;
             padding: 30px 20px;
-            /* Fundo animado com gradiente dinâmico */
             background: linear-gradient(-45deg, #0b0e1a, #1a1e3a, #2a1f3d, #0f1b2e);
             background-size: 400% 400%;
             animation: gradientBG 18s ease infinite;
@@ -93,6 +92,16 @@
             margin-top: 4px;
         }
 
+        .contador-apps {
+            color: rgba(255, 255, 255, 0.3);
+            font-size: 13px;
+            margin-left: auto;
+            background: rgba(255, 255, 255, 0.05);
+            padding: 6px 16px;
+            border-radius: 30px;
+            border: 1px solid rgba(255, 255, 255, 0.05);
+        }
+
         /* ===== LISTA DE APPS ===== */
         .lista-aplicativos {
             display: flex;
@@ -146,6 +155,42 @@
             gap: 6px;
         }
 
+        .badge-android {
+            display: inline-block;
+            background: rgba(76, 175, 80, 0.2);
+            color: #81c784;
+            padding: 1px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(76, 175, 80, 0.15);
+        }
+
+        .badge-tv {
+            display: inline-block;
+            background: rgba(33, 150, 243, 0.2);
+            color: #64b5f6;
+            padding: 1px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(33, 150, 243, 0.15);
+        }
+
+        .badge-box {
+            display: inline-block;
+            background: rgba(255, 152, 0, 0.2);
+            color: #ffb74d;
+            padding: 1px 10px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(255, 152, 0, 0.15);
+        }
+
         .botoes {
             display: flex;
             gap: 12px;
@@ -196,7 +241,7 @@
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
         }
 
-        /* ===== RODAPÉ INFORMATIVO ===== */
+        /* ===== RODAPÉ ===== */
         .rodape-info {
             margin-top: 35px;
             text-align: center;
@@ -217,6 +262,9 @@
                 flex-direction: column;
                 text-align: center;
                 padding: 18px 16px;
+            }
+            .contador-apps {
+                margin-left: 0;
             }
             .titulo-principal {
                 font-size: 22px;
@@ -264,16 +312,17 @@
                 <h1 class="titulo-principal">Loja Oficial APK</h1>
                 <div class="subtitulo">TV Nova Juarez · Apps IPTV</div>
             </div>
+            <span class="contador-apps">📱 45 apps</span>
         </header>
 
         <!-- Lista de Aplicativos -->
         <div class="lista-aplicativos">
 
-            <!-- App 1 -->
+            <!-- ===== APLICATIVOS DA PRIMEIRA LISTA (16 apps) ===== -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">FiziPlayer</span>
-                    <span class="compatibilidade">📱 Celulares e Tablets Android</span>
+                    <span class="compatibilidade">📱 Celulares e Tablets Android <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.gaha.fiziplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -281,11 +330,10 @@
                 </div>
             </div>
 
-            <!-- App 2 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">OttPlay</span>
-                    <span class="compatibilidade">📱 Android TV, Celulares e Tablets</span>
+                    <span class="compatibilidade">📱 Android TV, Celulares e Tablets <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.ottplay.ottplay" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -293,11 +341,10 @@
                 </div>
             </div>
 
-            <!-- App 3 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">Ninex Player</span>
-                    <span class="compatibilidade">📱 Android 5.0+</span>
+                    <span class="compatibilidade">📱 Dispositivos Android <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.sidhbalitech.ninexplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -305,11 +352,10 @@
                 </div>
             </div>
 
-            <!-- App 4 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">ImPlayer M</span>
-                    <span class="compatibilidade">📱 Android TV e Celulares</span>
+                    <span class="compatibilidade">📱 Android TV e Celulares <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.myiptvonline.implayerm" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -317,11 +363,10 @@
                 </div>
             </div>
 
-            <!-- App 5 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">Wavvy TV Plus</span>
-                    <span class="compatibilidade">📱 Smart TV e Android Móvel</span>
+                    <span class="compatibilidade">📱 Smart TV e Android Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.wavvy.tvplus" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -329,11 +374,10 @@
                 </div>
             </div>
 
-            <!-- App 6 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">Smart IPTV</span>
-                    <span class="compatibilidade">📱 TV Box e Android TV</span>
+                    <span class="compatibilidade">📱 TV Box e Android TV <span class="badge-box">TV Box</span> <span class="badge-tv">TV</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.studio23apps.smartiptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -341,11 +385,10 @@
                 </div>
             </div>
 
-            <!-- App 7 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">Zen IPTV</span>
-                    <span class="compatibilidade">📱 Celular, Tablet e TV</span>
+                    <span class="compatibilidade">📱 Celular, Tablet e TV <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=app.zeniptv.mobile" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -353,11 +396,10 @@
                 </div>
             </div>
 
-            <!-- App 8 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">IPTV Pro Streamer</span>
-                    <span class="compatibilidade">📱 Android 6.0+</span>
+                    <span class="compatibilidade">📱 Android <span class="badge-android">Android 6.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.iptvprostreamplayer.v1" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -365,11 +407,10 @@
                 </div>
             </div>
 
-            <!-- App 9 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">AE IPTV Player</span>
-                    <span class="compatibilidade">📱 Todos os Android</span>
+                    <span class="compatibilidade">📱 Todos os Android <span class="badge-android">Android 4.4+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.aeapp.iptvplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -377,11 +418,10 @@
                 </div>
             </div>
 
-            <!-- App 10 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">IPTV Plus</span>
-                    <span class="compatibilidade">📱 TV e Celular</span>
+                    <span class="compatibilidade">📱 TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.iptvstreamsolutions.iptvplus" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -389,11 +429,10 @@
                 </div>
             </div>
 
-            <!-- App 11 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">Big Play TV</span>
-                    <span class="compatibilidade">📱 Android TV e Box</span>
+                    <span class="compatibilidade">📱 Android TV e Box <span class="badge-tv">TV</span> <span class="badge-box">TV Box</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.bigplay.tv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -401,11 +440,10 @@
                 </div>
             </div>
 
-            <!-- App 12 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">IPTV Smarter Pro</span>
-                    <span class="compatibilidade">📱 Android TV, Celular, Tablet</span>
+                    <span class="compatibilidade">📱 Android TV, Celular, Tablet <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=ai.firstorder.iptv.player.smarter.androidtv.pro" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -413,11 +451,10 @@
                 </div>
             </div>
 
-            <!-- App 13 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">DiixStream IPTV Player</span>
-                    <span class="compatibilidade">📱 Universal Android</span>
+                    <span class="compatibilidade">📱 Universal Android <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.diixtream.iptvplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -425,11 +462,10 @@
                 </div>
             </div>
 
-            <!-- App 14 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">Pars IPTV Player</span>
-                    <span class="compatibilidade">📱 Android 5.0+</span>
+                    <span class="compatibilidade">📱 Android <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=com.aglontech.parsiptvplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -437,11 +473,10 @@
                 </div>
             </div>
 
-            <!-- App 15 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">Streambox Sudan</span>
-                    <span class="compatibilidade">📱 Celular e TV</span>
+                    <span class="compatibilidade">📱 Celular e TV <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=sudan.streambox" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -449,11 +484,10 @@
                 </div>
             </div>
 
-            <!-- App 16 -->
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">M3U IPTV</span>
-                    <span class="compatibilidade">📱 Android TV e Móvel</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
                 </div>
                 <div class="botoes">
                     <a href="https://play.google.com/store/apps/details?id=de.herber_edevelopment.m3uiptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
@@ -461,10 +495,320 @@
                 </div>
             </div>
 
+            <!-- ===== NOVOS APLICATIVOS (29 apps) ===== -->
+            
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">4K Stream Player</span>
+                    <span class="compatibilidade">📱 Celular e TV <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.fourkstreamplayer.app" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.fourkstreamplayer.app');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Nsofts Streambox</span>
+                    <span class="compatibilidade">📱 Celular e TV <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=nsofts.streambox" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=nsofts.streambox');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Flex Smarters</span>
+                    <span class="compatibilidade">📱 Android TV, Celular, Tablet <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.flex.smarters" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.flex.smarters');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Femto IPTV Pro</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.femto.iptvfemtopro" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.femto.iptvfemtopro');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Agile Player OTT</span>
+                    <span class="compatibilidade">📱 Android TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.iptvAgilePlayerOtt" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.iptvAgilePlayerOtt');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Smart Live Stream</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.iptv.player.smart.live.stream.m3u" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.iptv.player.smart.live.stream.m3u');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Visio Premium IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.visio.premium.iptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.visio.premium.iptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">ROHD Player</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.asproiustudio.rohd" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.asproiustudio.rohd');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Blink Player Lite</span>
+                    <span class="compatibilidade">📱 Android <span class="badge-android">Android 4.4+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.blinkplayerlite" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.blinkplayerlite');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">TNC IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=dev.tnc.iptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=dev.tnc.iptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Nexus Stream TV</span>
+                    <span class="compatibilidade">📱 Android TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.genrich.nexusstreamtv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.genrich.nexusstreamtv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">FSB IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.fsb.iptvfsb" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.fsb.iptvfsb');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Electron IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.gabrielthecode.electroniptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.gabrielthecode.electroniptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Atlantic Player Premium</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.atlanticplayer.premium" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.atlanticplayer.premium');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">IApp IPTV Android</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.iapp.iptv.android" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.iapp.iptv.android');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Invotyx Smart IPTV</span>
+                    <span class="compatibilidade">📱 Smart TV e Android <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.invotyx.tv.smartiptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.invotyx.tv.smartiptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Player Pro</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.ysngvn.playerpro" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.ysngvn.playerpro');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Xstream Masters TV</span>
+                    <span class="compatibilidade">📱 Android TV e Box <span class="badge-tv">TV</span> <span class="badge-box">TV Box</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.xtreammasterstv.player" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.xtreammasterstv.player');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Metawave Xtream IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.metawave.xtreamiptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.metawave.xtreamiptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Xtream IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=iptv.xtream" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=iptv.xtream');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">PO IPTV Player</span>
+                    <span class="compatibilidade">📱 Android TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.poiptvplayer.app" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.poiptvplayer.app');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">M3U Player Plus</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.m3uplayer.plus" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.m3uplayer.plus');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Mi IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.miiptv.miiptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.miiptv.miiptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Pars IPTV Player</span>
+                    <span class="compatibilidade">📱 Android <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.aglontech.parsiptvplayer" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.aglontech.parsiptvplayer');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">XX IPTV Player</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.xx.iptv_player" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.xx.iptv_player');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">Alaadn IPTV Player</span>
+                    <span class="compatibilidade">📱 Android TV e Móvel <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.alaadn.iptv_player" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.alaadn.iptv_player');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">IPZO Player</span>
+                    <span class="compatibilidade">📱 Android TV e Celular <span class="badge-tv">TV</span> <span class="badge-android">Android 5.0+</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.ipzo.player" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.ipzo.player');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <div class="aplicativo">
+                <div class="info-app">
+                    <span class="nome-app">XC IPTV</span>
+                    <span class="compatibilidade">📱 Android TV e Box <span class="badge-tv">TV</span> <span class="badge-box">TV Box</span></span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.nathnetwork.xciptv" target="_blank" class="botao botao-baixar">⬇️ Baixar</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.nathnetwork.xciptv');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
         </div>
 
         <div class="rodape-info">
-            TV Nova Juarez · 16 aplicativos IPTV disponíveis
+            TV Nova Juarez · 45 aplicativos IPTV disponíveis · Atualizado em Agosto 2026
         </div>
 
     </div>
