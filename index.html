@@ -102,6 +102,54 @@
             border: 1px solid rgba(255, 255, 255, 0.05);
         }
 
+        /* ===== DESTAQUE PARA APPS PRINCIPAIS ===== */
+        .aplicativo-destaque {
+            background: rgba(255, 215, 0, 0.08);
+            border: 2px solid rgba(255, 215, 0, 0.2);
+            backdrop-filter: blur(8px);
+            -webkit-backdrop-filter: blur(8px);
+            padding: 18px 24px;
+            border-radius: 22px;
+            box-shadow: 0 6px 18px rgba(0, 0, 0, 0.25), 0 0 30px rgba(255, 215, 0, 0.05);
+            transition: all 0.25s ease;
+            display: flex;
+            flex-wrap: wrap;
+            align-items: center;
+            justify-content: space-between;
+        }
+
+        .aplicativo-destaque:hover {
+            background: rgba(255, 215, 0, 0.12);
+            border-color: rgba(255, 215, 0, 0.35);
+            transform: translateY(-3px) scale(1.005);
+            box-shadow: 0 12px 30px rgba(0, 0, 0, 0.4), 0 0 40px rgba(255, 215, 0, 0.08);
+        }
+
+        .badge-oficial {
+            display: inline-block;
+            background: linear-gradient(135deg, #ffd700, #f5a623);
+            color: #1a1a2e;
+            padding: 2px 14px;
+            border-radius: 20px;
+            font-size: 10px;
+            font-weight: 700;
+            letter-spacing: 0.5px;
+            text-transform: uppercase;
+            margin-left: 10px;
+        }
+
+        .badge-roku {
+            display: inline-block;
+            background: rgba(106, 27, 154, 0.3);
+            color: #ce93d8;
+            padding: 1px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            letter-spacing: 0.3px;
+            border: 1px solid rgba(106, 27, 154, 0.2);
+        }
+
         /* ===== LISTA DE APPS ===== */
         .lista-aplicativos {
             display: flex;
@@ -144,6 +192,10 @@
             color: #eef3ff;
             letter-spacing: -0.2px;
             text-shadow: 0 1px 8px rgba(0, 0, 0, 0.5);
+            display: flex;
+            align-items: center;
+            flex-wrap: wrap;
+            gap: 8px;
         }
 
         .compatibilidade {
@@ -153,6 +205,7 @@
             display: flex;
             align-items: center;
             gap: 6px;
+            flex-wrap: wrap;
         }
 
         .badge-android {
@@ -189,6 +242,18 @@
             font-weight: 600;
             letter-spacing: 0.3px;
             border: 1px solid rgba(255, 152, 0, 0.15);
+        }
+
+        .badge-codigo {
+            display: inline-block;
+            background: rgba(255, 215, 0, 0.15);
+            color: #ffd54f;
+            padding: 1px 12px;
+            border-radius: 20px;
+            font-size: 11px;
+            font-weight: 600;
+            border: 1px solid rgba(255, 215, 0, 0.15);
+            font-family: 'Courier New', monospace;
         }
 
         .botoes {
@@ -230,6 +295,18 @@
             box-shadow: 0 8px 25px rgba(40, 167, 69, 0.5);
         }
 
+        .botao-download-direto {
+            background: linear-gradient(145deg, #e65100, #bf360c);
+            border-color: rgba(255, 152, 0, 0.3);
+            color: white;
+            box-shadow: 0 4px 15px rgba(230, 81, 0, 0.3);
+        }
+        .botao-download-direto:hover {
+            background: linear-gradient(145deg, #f57c00, #e65100);
+            transform: scale(1.04);
+            box-shadow: 0 8px 25px rgba(230, 81, 0, 0.5);
+        }
+
         .botao-compartilhar {
             background: rgba(255, 215, 0, 0.15);
             border-color: rgba(255, 215, 0, 0.25);
@@ -239,6 +316,25 @@
             background: rgba(255, 215, 0, 0.25);
             transform: scale(1.04);
             box-shadow: 0 8px 25px rgba(255, 215, 0, 0.25);
+        }
+
+        /* ===== DIVISOR ===== */
+        .divisor {
+            display: flex;
+            align-items: center;
+            gap: 15px;
+            margin: 10px 0 15px;
+            color: rgba(255, 255, 255, 0.15);
+            font-size: 12px;
+            letter-spacing: 2px;
+            text-transform: uppercase;
+        }
+        .divisor::before,
+        .divisor::after {
+            content: '';
+            flex: 1;
+            height: 1px;
+            background: rgba(255, 255, 255, 0.06);
         }
 
         /* ===== RODAPÉ ===== */
@@ -269,7 +365,8 @@
             .titulo-principal {
                 font-size: 22px;
             }
-            .aplicativo {
+            .aplicativo,
+            .aplicativo-destaque {
                 flex-direction: column;
                 align-items: stretch;
                 gap: 12px;
@@ -285,6 +382,9 @@
                 padding: 8px 16px;
                 font-size: 13px;
             }
+            .nome-app {
+                font-size: 17px;
+            }
         }
 
         @media (max-width: 480px) {
@@ -296,7 +396,11 @@
                 font-size: 19px;
             }
             .nome-app {
-                font-size: 17px;
+                font-size: 16px;
+            }
+            .badge-oficial {
+                font-size: 8px;
+                padding: 1px 10px;
             }
         }
     </style>
@@ -312,13 +416,63 @@
                 <h1 class="titulo-principal">Loja Oficial APK</h1>
                 <div class="subtitulo">TV Nova Juarez · Apps IPTV</div>
             </div>
-            <span class="contador-apps">📱 45 apps</span>
+            <span class="contador-apps">📱 47 apps</span>
         </header>
 
         <!-- Lista de Aplicativos -->
         <div class="lista-aplicativos">
 
-            <!-- ===== APLICATIVOS DA PRIMEIRA LISTA (16 apps) ===== -->
+            <!-- ========================================= -->
+            <!-- ===== APLICATIVOS DESTAQUE (OFICIAIS) ===== -->
+            <!-- ========================================= -->
+
+            <!-- APP OFICIAL 1: TV Nova Juarez -->
+            <div class="aplicativo-destaque">
+                <div class="info-app">
+                    <span class="nome-app">
+                        TV Nova Juarez
+                        <span class="badge-oficial">⭐ Oficial</span>
+                    </span>
+                    <span class="compatibilidade">
+                        📱 Android TV · Celular · Tablet
+                        <span class="badge-tv">TV</span>
+                        <span class="badge-android">Android 5.0+</span>
+                        <span class="badge-codigo">📥 Código: tvnovajuarez</span>
+                    </span>
+                </div>
+                <div class="botoes">
+                    <a href="https://topflash.xyz/tvnovajuarez.apk" target="_blank" class="botao botao-download-direto">⬇️ Download Direto (APK)</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://topflash.xyz/tvnovajuarez.apk');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- APP OFICIAL 2: S.A Play -->
+            <div class="aplicativo-destaque">
+                <div class="info-app">
+                    <span class="nome-app">
+                        S.A Play
+                        <span class="badge-oficial">⭐ Oficial</span>
+                    </span>
+                    <span class="compatibilidade">
+                        📱 Android TV · Celular · Roku TV
+                        <span class="badge-tv">TV</span>
+                        <span class="badge-roku">📺 Roku</span>
+                        <span class="badge-android">Android 5.0+</span>
+                    </span>
+                </div>
+                <div class="botoes">
+                    <a href="https://play.google.com/store/apps/details?id=com.eppicinefranquia.techplay" target="_blank" class="botao botao-baixar">⬇️ Baixar (Google Play)</a>
+                    <button class="botao botao-compartilhar" onclick="navigator.clipboard.writeText('https://play.google.com/store/apps/details?id=com.eppicinefranquia.techplay');alert('Link copiado!')">📤 Compartilhar</button>
+                </div>
+            </div>
+
+            <!-- ===== DIVISOR ===== -->
+            <div class="divisor">✦ Mais Aplicativos ✦</div>
+
+            <!-- ========================================= -->
+            <!-- ===== APLICATIVOS DA PRIMEIRA LISTA ===== -->
+            <!-- ========================================= -->
+
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">FiziPlayer</span>
@@ -495,8 +649,10 @@
                 </div>
             </div>
 
+            <!-- ========================================= -->
             <!-- ===== NOVOS APLICATIVOS (29 apps) ===== -->
-            
+            <!-- ========================================= -->
+
             <div class="aplicativo">
                 <div class="info-app">
                     <span class="nome-app">4K Stream Player</span>
@@ -808,7 +964,7 @@
         </div>
 
         <div class="rodape-info">
-            TV Nova Juarez · 45 aplicativos IPTV disponíveis · Atualizado em Agosto 2026
+            TV Nova Juarez · 47 aplicativos IPTV disponíveis · Atualizado em Agosto 2026
         </div>
 
     </div>
